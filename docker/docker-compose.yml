@@ -1,0 +1,21 @@
+version: "2"
+services:
+  myprojectname-node:
+    container_name: "myprojectname-node"
+    restart: always
+    build: .
+    user: node
+    working_dir: /home/node/myprojectname
+    volumes:
+      - ../:/home/node/myprojectname
+    ports:
+      - '8015:8000'
+    depends_on:
+      - myprojectname-mongo
+    command: yarn start
+  myprojectname-mongo:
+    container_name: "myprojectname-mongo"
+    restart: always
+    image: mongo
+    ports:
+      - '27015:27017' # Allow Compass to connect
