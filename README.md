@@ -1,3 +1,5 @@
+# DEPRECATED
+
 # A vue express boilerplate
 > Using VueJS frontend, connecting to Express & Mongo Docker backend.
 
